@@ -91,14 +91,29 @@
 
 // getAllUsers();
 
+// fetch('https://api.github.com/users/hiteshchoudhary')
+// .then((response) =>{
+//     return response.json()
+// })
+// .then((data)=>{
+//     console.log(data);
+// })
+// .catch((error)=>{
+//     console.log(error);
+// })
 
-fetch('https://api.github.com/users/hiteshchoudhary')
-.then((response) =>{
-    return response.json()
-})
-.then((data)=>{
-    console.log(data);
-})
-.catch((error)=>{
-    console.log(error);
-})
+// Define a function that takes a callback as an argument
+function doSomethingAsync(callback) {
+  setTimeout(function () {
+    console.log("Task is done!");
+    callback(); // Call the callback function
+  }, 1000);
+}
+
+// Define a callback function
+function afterTaskIsDone() {
+  console.log("Callback function executed.");
+}
+
+// Call the function with the callback
+doSomethingAsync(afterTaskIsDone);
